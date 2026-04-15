@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using PropertyApp.View;
 
 namespace PropertyApp
 {
@@ -7,11 +8,8 @@ namespace PropertyApp
         public App()
         {
             InitializeComponent();
-        }
 
-        protected override Window CreateWindow(IActivationState? activationState)
-        {
-            return new Window(new AppShell());
+            MainPage = new NavigationPage(root: new LandingPage());
         }
     }
 }
